@@ -1,0 +1,45 @@
+name: "Update Weather in README"
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Runs every 6 hours
+  workflow_dispatch:  # Allows manual execution
+
+jobs:
+  update-readme:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install jq (for JSON processing)
+        run: sudo apt-get install jq -y
+
+      - name: Fetch Weather Data
+        run: |
+          CITY="New York"  # Change this to your preferred city
+          API_KEY="${{ secrets.WEATHER_API_KEY }}"
+          URL="http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY"
+
+          RESPONSE=$(curl -s "$URL")
+          LOCATION=$(echo "$RESPONSE" | jq -r '.location.name')
+          TEMP=$(echo "$RESPONSE" | jq -r '.current.temp_c')
+          CONDITION=$(echo "$RESPONSE" | jq -r '.current.condition.text')
+          UPDATED_AT=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+
+          sed -i "s/{{LOCATION}}/$LOCATION/g" README.md
+          sed -i "s/{{TEMP}}/$TEMP/g" README.md
+          sed -i "s/{{CONDITION}}/$CONDITION/g" README.md
+          sed -i "s/{{UPDATED_AT}}/$UPDATED_AT/g" README.md
+
+      - name: Commit Changes
+        run: |
+          if git diff --exit-code; then
+            echo "No changes to commit."
+            exit 0
+          else
+            git config --global user.name "github-actions"
+            git config --global user.email "github-actions@github.com"
+            git add README.md
+            git commit -m "Updated weather in README"
+            git push origin main
+          fi
