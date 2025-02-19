@@ -1,0 +1,17 @@
+# 🌦️ Weather Update
+
+📍 City: **{{ .City }}**
+🌡️ Temperature: **{{ .CurrentWeather.Temperature }}°C**
+🌧️ Condition: **{{ .CurrentWeather.Condition }}**
+💨 Wind Speed: **{{ .CurrentWeather.WindSpeed }} km/h**
+☀️ Sunrise: **{{ .CurrentWeather.Sunrise }}**
+🌙 Sunset: **{{ .CurrentWeather.Sunset }}**
+
+📅 **7-Day Forecast**
+| Date       | Condition  | Temp (°C) | Wind (km/h) |
+|------------|-----------|-----------|-------------|
+{{ range .Weathers }}
+| {{ .Date }} | {{ .Condition }} | 🌡️ {{ .MaxTemp }}/{{ .MinTemp }} | 💨 {{ .WindSpeed }} |
+{{ end }}
+
+_Last updated at: {{ formatTime .UpdatedAt }}_
