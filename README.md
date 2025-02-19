@@ -1,12 +1,10 @@
 ## Hi there 👋
 
-## About Me 
+### About Me 
 
 - 🚀 Software Engeineer | Passionate about building intuitive applications
 - 💡 Enthusiastic about automation, AI, and real-world problem-solving
 - 🔭 I’m currently working on [TaskVibes](https://github.com/cecilialeung05/BrainStation-Hackathon-TaskVibes)
-- LinkedIn: 
-[Cecilia Leung](https://www.linkedin.com/in/cecilialeung05/)
 
 ---
 ### 🛠 Languages and Tools
