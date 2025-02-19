@@ -15,12 +15,15 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-
 # 🌤️ Dynamic Weather Report 🌤️
 
 **Location:** {{LOCATION}}  
 **Temperature:** {{TEMP}}°C  
 **Weather Condition:** {{CONDITION}}  
-**Updated At:** {{UPDATED_AT}}  
+
+🕒 **Update Times:**  
+- **Server Time (UTC):** {{UPDATED_AT}}  
+- **Your Local Time:** {{USER_TIMEZONE}}  
 
 _(This README updates every 6 hours automatically)_
+
