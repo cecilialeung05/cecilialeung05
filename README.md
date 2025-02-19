@@ -14,3 +14,13 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+
+# 🌤️ Dynamic Weather Report 🌤️
+
+**Location:** {{LOCATION}}  
+**Temperature:** {{TEMP}}°C  
+**Weather Condition:** {{CONDITION}}  
+**Updated At:** {{UPDATED_AT}}  
+
+_(This README updates every 6 hours automatically)_
