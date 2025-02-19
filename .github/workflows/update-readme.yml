@@ -22,7 +22,7 @@ jobs:
             exit 1
           fi
 
-          CITY="New York"  # Change this to your preferred city
+          CITY="Toronto" 
           API_KEY="${{ secrets.WEATHER_API_KEY }}"
           WEATHER_URL="http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY"
           TIMEZONE_URL="http://worldtimeapi.org/api/ip"
