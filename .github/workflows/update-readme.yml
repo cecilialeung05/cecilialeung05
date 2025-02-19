@@ -14,22 +14,29 @@ jobs:
       - name: Install jq (for JSON processing)
         run: sudo apt-get install jq -y
 
-      - name: Fetch Weather Data
+      - name: Fetch Weather & Timezone Data
         run: |
           CITY="New York"  # Change this to your preferred city
           API_KEY="${{ secrets.WEATHER_API_KEY }}"
-          URL="http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY"
+          WEATHER_URL="http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY"
+          TIMEZONE_URL="http://worldtimeapi.org/api/ip"
 
-          RESPONSE=$(curl -s "$URL")
-          LOCATION=$(echo "$RESPONSE" | jq -r '.location.name')
-          TEMP=$(echo "$RESPONSE" | jq -r '.current.temp_c')
-          CONDITION=$(echo "$RESPONSE" | jq -r '.current.condition.text')
-          UPDATED_AT=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          WEATHER_RESPONSE=$(curl -s "$WEATHER_URL")
+          TIMEZONE_RESPONSE=$(curl -s "$TIMEZONE_URL")
+
+          LOCATION=$(echo "$WEATHER_RESPONSE" | jq -r '.location.name')
+          TEMP=$(echo "$WEATHER_RESPONSE" | jq -r '.current.temp_c')
+          CONDITION=$(echo "$WEATHER_RESPONSE" | jq -r '.current.condition.text')
+
+          SERVER_TIME=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          USER_TIMEZONE=$(echo "$TIMEZONE_RESPONSE" | jq -r '.timezone')
+          USER_LOCAL_TIME=$(echo "$TIMEZONE_RESPONSE" | jq -r '.datetime' | cut -d '.' -f1)
 
           sed -i "s/{{LOCATION}}/$LOCATION/g" README.md
           sed -i "s/{{TEMP}}/$TEMP/g" README.md
           sed -i "s/{{CONDITION}}/$CONDITION/g" README.md
-          sed -i "s/{{UPDATED_AT}}/$UPDATED_AT/g" README.md
+          sed -i "s/{{UPDATED_AT}}/$SERVER_TIME/g" README.md
+          sed -i "s/{{USER_TIMEZONE}}/$USER_LOCAL_TIME ($USER_TIMEZONE)/g" README.md
 
       - name: Commit Changes
         run: |
@@ -40,6 +47,6 @@ jobs:
             git config --global user.name "github-actions"
             git config --global user.email "github-actions@github.com"
             git add README.md
-            git commit -m "Updated weather in README"
+            git commit -m "Updated weather & timezone in README"
             git push origin main
           fi
