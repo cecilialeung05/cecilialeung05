@@ -15,15 +15,25 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-# 🌤️ Dynamic Weather Report 🌤️
 
-**Location:** {{LOCATION}}  
-**Temperature:** {{TEMP}}°C  
-**Weather Condition:** {{CONDITION}}  
+<h1 align="center">🌤️ Dynamic Weather Report 🌤️</h1>
 
-🕒 **Update Times:**  
-- **Server Time (UTC):** {{UPDATED_AT}}  
-- **Your Local Time:** {{USER_TIMEZONE}}  
+<p align="center">
+  <img src="https://img.shields.io/badge/Update%20Frequency-Every%206%20Hours-blue" alt="Update Frequency">
+</p>
 
-_(This README updates every 6 hours automatically)_
+---
 
+### 📍 **Location:** 🌍 **{{LOCATION}}**  
+**🌡️ Temperature:** **{{TEMP}}°C**  
+**⛅ Condition:** **{{CONDITION}}**  
+
+---
+
+### 🕒 **Update Times**  
+⏳ **Server Time (UTC):** 🕘 *{{UPDATED_AT}}*  
+⌛ **Your Local Time:** 🕒 *{{USER_TIMEZONE}}*  
+
+---
+
+📌 _(This README updates every 6 hours automatically)_
