@@ -16,14 +16,34 @@ jobs:
 
       - name: Fetch Weather & Timezone Data
         run: |
+          # Check if API Key is available
+          if [ -z "${{ secrets.WEATHER_API_KEY }}" ]; then
+            echo "❌ ERROR: WEATHER_API_KEY is missing!"
+            exit 1
+          fi
+
           CITY="New York"  # Change this to your preferred city
           API_KEY="${{ secrets.WEATHER_API_KEY }}"
           WEATHER_URL="http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY"
           TIMEZONE_URL="http://worldtimeapi.org/api/ip"
 
-          WEATHER_RESPONSE=$(curl -s "$WEATHER_URL")
-          TIMEZONE_RESPONSE=$(curl -s "$TIMEZONE_URL")
+          echo "🌍 Fetching weather data for: $CITY..."
 
+          # Fetch Weather Data
+          WEATHER_RESPONSE=$(curl -s "$WEATHER_URL")
+          if [[ -z "$WEATHER_RESPONSE" ]]; then
+            echo "❌ ERROR: Failed to fetch weather data!"
+            exit 1
+          fi
+
+          # Fetch Timezone Data
+          TIMEZONE_RESPONSE=$(curl -s "$TIMEZONE_URL")
+          if [[ -z "$TIMEZONE_RESPONSE" ]]; then
+            echo "❌ ERROR: Failed to fetch timezone data!"
+            exit 1
+          fi
+
+          # Parse JSON data
           LOCATION=$(echo "$WEATHER_RESPONSE" | jq -r '.location.name')
           TEMP=$(echo "$WEATHER_RESPONSE" | jq -r '.current.temp_c')
           CONDITION=$(echo "$WEATHER_RESPONSE" | jq -r '.current.condition.text')
@@ -32,6 +52,15 @@ jobs:
           USER_TIMEZONE=$(echo "$TIMEZONE_RESPONSE" | jq -r '.timezone')
           USER_LOCAL_TIME=$(echo "$TIMEZONE_RESPONSE" | jq -r '.datetime' | cut -d '.' -f1)
 
+          # Debugging output
+          echo "✅ Fetched Data:"
+          echo "🌍 Location: $LOCATION"
+          echo "🌡️ Temperature: $TEMP°C"
+          echo "⛅ Condition: $CONDITION"
+          echo "🕒 Server Time: $SERVER_TIME"
+          echo "⌛ User Local Time: $USER_LOCAL_TIME ($USER_TIMEZONE)"
+
+          # Replace placeholders in README.md
           sed -i "s/{{LOCATION}}/$LOCATION/g" README.md
           sed -i "s/{{TEMP}}/$TEMP/g" README.md
           sed -i "s/{{CONDITION}}/$CONDITION/g" README.md
@@ -41,12 +70,12 @@ jobs:
       - name: Commit Changes
         run: |
           if git diff --exit-code; then
-            echo "No changes to commit."
+            echo "✅ No changes to commit."
             exit 0
           else
             git config --global user.name "github-actions"
             git config --global user.email "github-actions@github.com"
             git add README.md
-            git commit -m "Updated weather & timezone in README"
+            git commit -m "🔄 Updated weather & timezone in README"
             git push origin main
           fi
