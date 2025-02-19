@@ -5,7 +5,9 @@
 - 🚀 Software Engeineer | Passionate about building intuitive applications
 - 💡 Enthusiastic about automation, AI, and real-world problem-solving
 - 🔭 I’m currently working on [TaskVibes](https://github.com/cecilialeung05/BrainStation-Hackathon-TaskVibes)
-📧 LinkedIn: 
+- ## Connect with me
+[LinkedIn Profile](https://www.linkedin.com/in/cecilialeung05/)
+
 ---
 
 ### 🛠 Languages and Tools
