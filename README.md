@@ -2,8 +2,8 @@
 
 ### About Me 
 
-- 🚀 Software Engeineer | Passionate about building intuitive applications
-- 💡 Enthusiastic about automation, AI, and real-world problem-solving
+- Software Engeineer | Passionate about building intuitive applications
+- Enthusiastic about automation, AI, and real-world problem-solving
 - 🔭 I’m currently working on [my capstone project](https://github.com/cecilialeung05/capstone-project)! 
 
 ---
