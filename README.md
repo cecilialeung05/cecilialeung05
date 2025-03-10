@@ -1,10 +1,10 @@
 ## Hi there 👋
 
-### 🔭 About Me 
+### About Me 
 
 - Software Engineer | Passionate about building intuitive applications
 - Enthusiastic about automation, AI, and real-world problem-solving
-- I’m currently working on [my capstone project](https://github.com/cecilialeung05/capstone-project)!
+- I’m currently working on [my capstone project](https://github.com/cecilialeung05/capstone-project).
 - Here is my most recent [side project - a marketing funnel demo](https://github.com/cecilialeung05/marketing-funnel-demo).
 
 ---
