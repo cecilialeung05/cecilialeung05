@@ -9,7 +9,7 @@
 ---
 ## 📂 Current Work:
 - **I’m currently polishing up my capstone project:**  
-  [Capstone Project](https://github.com/cecilialeung05/capstone-project)
+  [Capstone Project - Focus Flow MVP](https://github.com/cecilialeung05/capstone-project)
 - **Here is my most recent side project:**  
   [Marketing Funnel Demo](https://github.com/cecilialeung05/marketing-funnel-demo)
 
