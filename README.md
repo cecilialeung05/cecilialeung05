@@ -1,23 +1,22 @@
-## Hi there 👋
+# Cecilia, here. 👋
 
-# 💫 About Me:
+## 💫 About Me:
 
 - **Software Engineer | Passionate about building intuitive applications.**  
-  I love creating solutions that make life easier. My background in healthcare gave me firsthand experience tackling complex, real-world challenges.  
-  Now, as a software engineer, I apply the same problem-solving mindset to developing applications that improve accessibility and enhance user experiences.
+- I love creating solutions that make life easier. My background in healthcare gave me firsthand experience tackling complex, real-world challenges.  
+- Now, as a software engineer, I apply the same problem-solving mindset to developing applications that improve accessibility and enhance user experiences.
 
+---
+## 📂 Current Work:
 - **I’m currently polishing up my capstone project:**  
   [Capstone Project](https://github.com/cecilialeung05/capstone-project)
-
 - **Here is my most recent side project:**  
   [Marketing Funnel Demo](https://github.com/cecilialeung05/marketing-funnel-demo)
 
 ---
+## 🛠 Languages and Tools:
 
----
-### 🛠 Languages and Tools:
-
-#### **Frontend**  
+### **Frontend**  
 [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/)  
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  
 [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)  
@@ -55,6 +54,5 @@
 ---
 [![](https://visitcount.itsvg.in/api?id=Cecilialeung05&icon=0&color=0)](https://visitcount.itsvg.in)
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
 
 
