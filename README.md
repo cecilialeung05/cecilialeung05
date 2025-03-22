@@ -12,10 +12,8 @@
   [Capstone Project - Focus Flow MVP](https://github.com/cecilialeung05/capstone-project)
 - **Here is my most recent side project:**  
   [Marketing Funnel Demo](https://github.com/cecilialeung05/marketing-funnel-demo)
-  
-- I created a Chrome extension to archive or delete ChatGPT conversations in batches.
-  **Try it out here:**[ChatGPT Archive-Delete Extension](https://github.com/cecilialeung05/chatgpt-archive-delete)
-
+- I created a Chrome extension to archive or delete ChatGPT conversations in batches.  
+  **Try it out here:** [ChatGPT Archive-Delete Extension](https://github.com/cecilialeung05/chatgpt-archive-delete)  
 ---
 ## 🛠 Languages and Tools:
 
