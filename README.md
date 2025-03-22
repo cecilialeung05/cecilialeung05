@@ -13,7 +13,7 @@
 - **Here is my most recent side project:**  
   [Marketing Funnel Demo](https://github.com/cecilialeung05/marketing-funnel-demo)
 - **The other day, I created a Chrome extension to quickly archive or delete ChatGPT conversations in batches.
-  Feel free to try it out here:**  [ChatGPT Archive-Delete Extension]((https://github.com/cecilialeung05/chatgpt-archive-delete)
+  Feel free to try it out here!:**[ChatGPT Archive-Delete Extension](https://github.com/cecilialeung05/chatgpt-archive-delete)
 
 ---
 ## 🛠 Languages and Tools:
