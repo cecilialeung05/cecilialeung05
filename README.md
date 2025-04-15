@@ -13,7 +13,10 @@
 - **Here is my most recent side project:**  
   [Marketing Funnel Demo](https://github.com/cecilialeung05/marketing-funnel-demo)
 - I created a Chrome extension that let's ChatGPT Users archive or delete conversations in batches.  
-  **Try it out here:** [ChatGPT Archive-Delete Extension](https://github.com/cecilialeung05/chatgpt-archive-delete)  
+  **Try it out here:** [ChatGPT Archive-Delete Extension](https://github.com/cecilialeung05/chatgpt-archive-delete)
+- **Mini frontend projects in progress:**  
+  [Frontend Mentor Challenges](https://frontend-mentor-develop-cecilialeung05.vercel.app/)
+
 ---
 ## 🛠 Languages and Tools:
 
